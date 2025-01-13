@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braquages LastV</title>
+    <script>
+        function validateCredentials() {
+            const usernameInput = document.getElementById('username').value;
+            const passwordInput = document.getElementById('password').value;
+
+            const correctUsername = 'braquages';
+            const correctPassword = 'download';
+
+            if (usernameInput === correctUsername && passwordInput === correctPassword) {
+                document.getElementById('downloadLink').style.display = 'block';
+                document.getElementById('errorMessage').style.display = 'none';
+            } else {
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('downloadLink').style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Connexion requise pour télécharger</h2>
+    <label for="username">Nom d'utilisateur:</label>
+    <input type="text" id="username" name="username"><br><br>
+    <label for="password">Mot de passe:</label>
+    <input type="password" id="password" name="password"><br><br>
+    <button onclick="validateCredentials()">Valider</button>
+    <p id="errorMessage" style="color: red; display: none;">Accès Refusé</p>
+    <a id="downloadLink" href="https://www.mediafire.com/file/os8qlh0ezj8nc2l/braquages.txt/file" download style="display: none;">Télécharger le fichier</a>
+</body>
+</html>
